@@ -2478,9 +2478,11 @@
                     var highlightToday = moment(today.time).format('L') == moment(now).format('L');
                     today.extraClass = '';
                     today.tooltip = '';
-                    if (today.valid && opt.beforeShowDay && typeof opt.beforeShowDay == 'function') {
+                    if (opt.beforeShowDay && typeof opt.beforeShowDay == 'function') {
                         var _r = opt.beforeShowDay(moment(today.time).toDate());
-                        today.valid = _r[0];
+                        if (today.valid) {
+                            today.valid = _r[0];
+                        }
                         today.extraClass = _r[1] || '';
                         today.tooltip = _r[2] || '';
                         if (today.tooltip !== '') today.extraClass += ' has-tooltip ';
