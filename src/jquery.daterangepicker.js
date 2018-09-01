@@ -1337,6 +1337,10 @@
             showGap();
             updateCalendarWidth();
             calcPosition();
+
+            $(self).trigger('datepicker-opened-and-positioned', {
+              relatedTarget: box
+            });
         }
 
         function checkAndSetDefaultValue() {
