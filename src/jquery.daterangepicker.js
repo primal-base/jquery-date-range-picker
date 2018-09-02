@@ -904,6 +904,7 @@
             container: 'body',
             alwaysOpen: false,
             singleDate: false,
+            readOnly: false,
             lookBehind: false,
             batchMode: false,
             duration: 200,
@@ -1054,6 +1055,10 @@
                 calcPosition();
             } else {
                 box.addClass('inline-wrapper');
+            }
+
+            if (opt.readOnly) {
+              box.addClass('read-only');
             }
 
             if (opt.alwaysOpen) {
@@ -1480,7 +1485,10 @@
 
 
         function dayClicked(day) {
-            if (day.hasClass('invalid')) return;
+            if (opt.readOnly || day.hasClass('invalid')) {
+                return;
+            }
+
             var time = day.attr('time');
             day.addClass('checked');
             if (opt.singleDate) {
