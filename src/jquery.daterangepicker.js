@@ -1342,11 +1342,11 @@
             showGap();
             updateCalendarWidth();
             calcPosition();
-        }
 
-        $(self).trigger('datepicker-opened-and-positioned', {
-            relatedTarget: box
-        });
+            $(self).trigger('datepicker-opened-and-positioned', {
+                relatedTarget: box
+            });
+        }
 
         function checkAndSetDefaultValue() {
             var __default_string = opt.getValue.call(selfDom);
@@ -2503,7 +2503,6 @@
                     today.tooltip = '';
                     if (opt.beforeShowDay && typeof opt.beforeShowDay == 'function') {
                         var _r = opt.beforeShowDay(moment(today.time).toDate());
-                        today.valid = _r[0];
                         if (today.valid) {
                             today.valid = _r[0];
                         }

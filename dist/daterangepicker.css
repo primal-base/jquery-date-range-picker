@@ -166,10 +166,6 @@
   text-transform: uppercase;
 }
 
-.date-picker-wrapper .month-wrapper table .day.has-tooltip {
-  cursor: help !important;
-}
-
 .date-picker-wrapper .month-wrapper table .day.has-tooltip .tooltip {
   white-space: nowrap;
 }
