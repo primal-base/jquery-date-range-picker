@@ -1983,6 +1983,12 @@
             opt[month] = date;
             updateSelectableRange();
             bindEvents();
+
+            $(self).trigger('datepicker-show-month', {
+                relatedTarget: box,
+                date,
+                month
+            });
         }
 
         function generateMonthElement(date, month) {
