@@ -967,6 +967,7 @@
         $(this).off('.datepicker').on('click.datepicker', function(evt) {
             var isOpen = box.is(':visible');
             if (!isOpen) open(opt.duration);
+            else closeDatePicker();
         }).on('change.datepicker', function(evt) {
             checkAndSetDefaultValue();
         }).on('keyup.datepicker', function() {
