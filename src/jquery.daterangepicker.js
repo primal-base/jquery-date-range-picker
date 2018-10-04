@@ -1986,8 +1986,8 @@
 
             $(self).trigger('datepicker-show-month', {
                 relatedTarget: box,
-                date,
-                month
+                date: date,
+                month: month
             });
         }
 
